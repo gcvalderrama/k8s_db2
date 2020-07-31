@@ -7,18 +7,18 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pod-db2
+      key: pod-db2
   template:
     metadata:
       labels:
-        app: pod-db2
+        key: pod-db2
     spec:
       volumes:
       - name: db2-volume
         emptyDir: {}
       containers:
         - name: db
-          image: localhost:48700/sut/db2
+          image: localhost:5000/sut/db2
           ports:
             - containerPort: 50000
           env:
